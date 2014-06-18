@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<title>Open Tech School Berlin Coaches Memory Game</title>
+<meta charset="UTF-8"/>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+
+<div class="pictureContainer">
+	<img src="aleks.jpg" height="400" width="200"/>
+</div>
+<div class="pictureContainer">
+	<img src="amelie.jpg" height="400" width="200"/>
+</div>
+<div class="pictureContainer">
+	<img src="beatrice.jpg" height="400" width="200"/>
+</div>
+<div class="pictureContainer">
+	<img src="duana.jpg" height="400" width="200"/>
+</div>
+<div class="pictureContainer">
+	<img src="giorgia.jpg" height="400" width="200"/>
+</div>
+<div class="pictureContainer">
+	<img src="martin.jpg" height="400" width="200"/>
+</div>
+<div class="pictureContainer">
+	<img src="aleks.jpg" height="400" width="200"/>
+</div>
+<div class="pictureContainer">
+	<img src="amelie.jpg" height="400" width="200"/>
+</div>
+<div class="pictureContainer">
+	<img src="beatrice.jpg" height="400" width="200"/>
+</div>
+<div class="pictureContainer">
+	<img src="duana.jpg" height="400" width="200"/>
+</div>
+<div class="pictureContainer">
+	<img src="giorgia.jpg" height="400" width="200"/>
+</div>
+<div class="pictureContainer">
+	<img src="martin.jpg" height="400" width="200"/>
+</div>
+<!-- on.click selects selected class 
+
+within onClick function
+
+if 2 pictures with class selected check picture =? picture, then persists forever using new class ie "persist"
+count if 2 selected using .length on new NodeList with nodes with selected class, then remove selected class if not persist class
+if picture does not picture remove select class upon next click
+randomization-->
+
+<script>
+
+picture = document.querySelectorAll(".pictureContainer");
+
+for (var i = 0; i < picture.length; ++i) {
+  picture[i].addEventListener('click', onClick );  // Calling myNodeList.item(i) isn't necessary in JavaScript
+}
+
+function onClick ( event ) {
+	event.currentTarget.classList.add("selected");
+}
+
+
+</script>
+
+</body>
+</html>

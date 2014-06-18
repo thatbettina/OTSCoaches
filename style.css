@@ -1,0 +1,14 @@
+.pictureContainer {
+    height: 200px;
+    width: 200px;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.pictureContainer img {
+    position: relative;
+    top: 0px;
+}
+.pictureContainer.selected img, .pictureContainer.persist img{
+    top: -200px;
+}
