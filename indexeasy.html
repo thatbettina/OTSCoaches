@@ -15,56 +15,63 @@
 4. render root element
 -->
 
+<!-- 1. make big element with blue color
+2. make coaches' photo as background image for picture container instead of using sprites
+3. make them disappear when the data names don't match
+4. add names using background-position
+-->
 
-<div class="pictureContainer" data-name="aleks">
-	<div class="nameTag"><h1>Aleks</h1></div>
-	<img src="aleks.jpg" height="400" width="200"/>
-</div>
-<div class="pictureContainer" data-name="amelie">
-	<div class="nameTag"><h1>Amelie</h1></div>
-	<img src="amelie.jpg" height="400" width="200"/>
-</div>
-<div class="pictureContainer" data-name="beatrice">
-	<div class="nameTag"><h1>Beatrice</h1></div>
-	<img src="beatrice.jpg" height="400" width="200"/>
-</div>
-<div class="pictureContainer" data-name="duana">
-	<div class="nameTag"><h1>Duana</h1></div>
-	<img src="duana.jpg" height="400" width="200"/>
-</div>
-<div class="pictureContainer" data-name="giorgia">
-	<div class="nameTag"><h1>Giorgia</h1></div>
-	<img src="giorgia.jpg" height="400" width="200"/>
-</div>
-<div class="pictureContainer" data-name="martin">
-	<div class="nameTag"><h1>Martin</h1></div>
-	<img src="martin.jpg" height="400" width="200"/>
-</div>
-<div class="pictureContainer" data-name="aleks">
-	<div class="nameTag"><h1>Aleks</h1></div>
-	<img src="aleks.jpg" height="400" width="200"/>
-</div>
-<div class="pictureContainer" data-name="amelie">
-	<div class="nameTag"><h1>Amelie</h1></div>
-	<img src="amelie.jpg" height="400" width="200"/>
-</div>
-<div class="pictureContainer" data-name="beatrice">
-	<div class="nameTag"><h1>Beatrice</h1></div>
-	<img src="beatrice.jpg" height="400" width="200"/>
-</div>
-<div class="pictureContainer" data-name="duana">
-	<div class="nameTag"><h1>Duana</h1></div>
-	<img src="duana.jpg" height="400" width="200"/>
-</div>
-<div class="pictureContainer" data-name="giorgia">
-	<div class="nameTag"><h1>Giorgia</h1></div>
-	<img src="giorgia.jpg" height="400" width="200"/>
-</div>
-<div class="pictureContainer" data-name="martin">
-	<div class="nameTag"><h1>Martin</h1></div>
-	<img src="martin.jpg" height="400" width="200"/>
-</div>
+<div class="background">
+	<div class="pictureContainer" data-name="aleks">
+		<div class="nameTag"><h1>Aleks</h1></div>
+		<img src="aleks.jpg" height="400" width="200"/>
+	</div>
+	<div class="pictureContainer" data-name="amelie">
+		<div class="nameTag"><h1>Amelie</h1></div>
+		<img src="amelie.jpg" height="400" width="200"/>
 
+	</div>
+	<div class="pictureContainer" data-name="beatrice">
+		<div class="nameTag"><h1>Beatrice</h1></div>
+		<img src="beatrice.jpg" height="400" width="200"/>
+	</div>
+	<div class="pictureContainer" data-name="duana">
+		<div class="nameTag"><h1>Duana</h1></div>
+		<img src="duana.jpg" height="400" width="200"/>
+	</div>
+	<div class="pictureContainer" data-name="giorgia">
+		<div class="nameTag"><h1>Giorgia</h1></div>
+		<img src="giorgia.jpg" height="400" width="200"/>
+	</div>
+	<div class="pictureContainer" data-name="martin">
+		<div class="nameTag"><h1>Martin</h1></div>
+		<img src="martin.jpg" height="400" width="200"/>
+	</div>
+	<div class="pictureContainer" data-name="aleks">
+		<div class="nameTag"><h1>Aleks</h1></div>
+		<img src="aleks.jpg" height="400" width="200"/>
+	</div>
+	<div class="pictureContainer" data-name="amelie">
+		<div class="nameTag"><h1>Amelie</h1></div>
+		<img src="amelie.jpg" height="400" width="200"/>
+	</div>
+	<div class="pictureContainer" data-name="beatrice">
+		<div class="nameTag"><h1>Beatrice</h1></div>
+		<img src="beatrice.jpg" height="400" width="200"/>
+	</div>
+	<div class="pictureContainer" data-name="duana">
+		<div class="nameTag"><h1>Duana</h1></div>
+		<img src="duana.jpg" height="400" width="200"/>
+	</div>
+	<div class="pictureContainer" data-name="giorgia">
+		<div class="nameTag"><h1>Giorgia</h1></div>
+		<img src="giorgia.jpg" height="400" width="200"/>
+	</div>
+	<div class="pictureContainer" data-name="martin">
+		<div class="nameTag"><h1>Martin</h1></div>
+		<img src="martin.jpg" height="400" width="200"/>
+	</div>
+</div>
 
 <!-- on.click selects selected class 
 
@@ -124,18 +131,13 @@ for (var i = 0; i < pictures.length; ++i) {
 function onClick ( event ) {
 	event.currentTarget.classList.add("selected");
 	// create new nodelist of picturecontainers with class "selected"
-	var selectedPictures = document.querySelectorAll(".selected");
+	selectedPictures = document.querySelectorAll(".selected");
 	if (selectedPictures.length == 1) {
 		return;
 	} else if (selectedPictures.length == 2) {
 		if (selectedPictures[0].dataset.name === selectedPictures[1].dataset.name) {
 		selectedPictures[0].classList.add("persist");
 		selectedPictures[1].classList.add("persist");
-		//I can only be in one node at a time, so I can only ack for one nameTag from one node at a time.
-		var nameTag0 = selectedPictures[0].querySelector(".nameTag");
-		nameTag0.classList.add("show");
-		var nameTag1 = selectedPictures[1].querySelector(".nameTag");
-		nameTag1.classList.add("show");
 		} 
 		//set time out to show 2nd picture for 1000 milliseconds, defined inline
 		setTimeout ( function() {
